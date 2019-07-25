@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "boundles-internet-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A static website for Boundless Internet",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jacob D. Castro <jdcastro.business@gmail.com>",
   "dependencies": {
     "gatsby": "^2.10.0",
     "gatsby-image": "^2.2.1",
@@ -27,6 +27,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
@@ -35,9 +36,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/jacobdcastro/boundless-internet"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/jacobdcastro/boundless-internet/issues"
   }
 }
