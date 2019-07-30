@@ -2,7 +2,7 @@
   "name": "boundles-internet-site",
   "private": true,
   "description": "A static website for Boundless Internet",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "author": "Jacob D. Castro <jdcastro.business@gmail.com>",
   "dependencies": {
     "gatsby": "^2.10.0",
