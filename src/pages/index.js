@@ -1,21 +1,39 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../templates/layout';
+import IntroBanner from '../components/indexPage/IntroBanner';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const Index = ({ data }) => {
+  return (
+    <Layout data={data.contentfulPageHeader}>
+      <IntroBanner />
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default Index;
+
+Index.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export const INDEX_QUERY = graphql`
+  query INDEX_QUERY {
+    contentfulPageHeader(id: { eq: "d15d7293-a259-5625-93be-799772cc9813" }) {
+      id
+      pageTitle
+      isHomePage
+      headline
+      backgroundImage {
+        id
+        title
+        description
+        fluid(quality: 100) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+    }
+  }
+`;
