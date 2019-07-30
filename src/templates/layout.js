@@ -1,17 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import SiteHead from '../utils/Helmet';
 
 import '../utils/normalize.css';
 
-const Layout = ({ data }) => {
+const Layout = ({ data, children }) => {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: '#dbdbdb',
+      }}
+    >
       <SiteHead />
       <Header headerData={data} />
 
-      {/* <main>{children}</main> */}
+      <main
+        style={{
+          position: 'relative',
+          display: 'inline-block',
+          zIndex: '2',
+        }}
+      >
+        {children}
+      </main>
+
+      <Footer />
     </div>
   );
 };

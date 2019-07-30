@@ -7,6 +7,7 @@ import IntroBanner from '../components/indexPage/IntroBanner';
 
 const Index = ({ data }) => {
   return (
+    // <Layout> includes header banner and navigation
     <Layout data={data.contentfulPageHeader}>
       <IntroBanner />
     </Layout>

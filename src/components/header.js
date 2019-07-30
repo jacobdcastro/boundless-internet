@@ -57,7 +57,7 @@ const Header = ({ headerData }) => {
 
           <button
             id="hamburger"
-            className={`hamburger hamburger--spin${mobileNavIsOpen &&
+            className={`hamburger hamburger--spin-r${mobileNavIsOpen &&
               ` is-active`}`}
             onClick={() =>
               toggleMobileNav((mobileNavIsOpen = !mobileNavIsOpen))
@@ -70,10 +70,17 @@ const Header = ({ headerData }) => {
           </button>
         </nav>
 
-        <div className="headerContentSection">
-          <h2>asdfjkl;</h2>
-          <a href="#footer">Contact us!</a>
-        </div>
+        {headerData.isHomePage ? (
+          <div className="index__headerContentSection">
+            <h2>{headerData.headline}</h2>
+            <a href="#footer">GET STARTED</a>
+          </div>
+        ) : (
+          <div className="headerContentSection">
+            <h2>asdfjkl;</h2>
+            <a href="#footer">GET STARTED</a>
+          </div>
+        )}
       </div>
     </Wrapper>
   );
