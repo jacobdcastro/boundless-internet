@@ -1,7 +1,12 @@
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const Head = () => {
-  <Helmet>
-    <title>Boundless Internet</title>
-  </Helmet>;
+const SiteHead = () => {
+  return (
+    <Helmet>
+      <title>Boundless Internet</title>
+    </Helmet>
+  );
 };
+
+export default SiteHead;
