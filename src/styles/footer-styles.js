@@ -56,6 +56,24 @@ const Wrapper = styled.div`
       cursor: pointer;
     }
   }
+  .linkSection {
+    width: 100vw;
+  }
+  .socialLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 15px 0;
+  }
+  .socialIcon {
+    /* display: inline; */
+    width: 50px;
+    height: auto;
+    transition: 0.5s;
+  }
+  .socialIcon:hover {
+    transform: (translateY(15px));
+  }
 `;
 
 export default Wrapper;

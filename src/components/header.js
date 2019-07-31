@@ -64,8 +64,8 @@ const Header = ({ headerData }) => {
             }
             type="button"
           >
-            <span class="hamburger-box">
-              <span class="hamburger-inner" />
+            <span className="hamburger-box">
+              <span className="hamburger-inner" />
             </span>
           </button>
         </nav>

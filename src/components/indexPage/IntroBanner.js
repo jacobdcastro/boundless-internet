@@ -48,7 +48,7 @@ const IntroBanner = () => {
   return (
     <Wrapper>
       {images.map((img, index) => (
-        <div className={`introCard ic-${index}`}>
+        <div key={index} className={`introCard ic-${index}`}>
           <Img
             classname={`ic-image`}
             fluid={img.fluid}
