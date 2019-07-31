@@ -4,12 +4,14 @@ import { graphql } from 'gatsby';
 
 import Layout from '../templates/layout';
 import IntroBanner from '../components/indexPage/IntroBanner';
+import Banner1 from '../components/indexPage/Banner1';
 
 const Index = ({ data }) => {
   return (
     // <Layout> includes header banner and navigation
     <Layout data={data.contentfulPageHeader}>
       <IntroBanner />
+      <Banner1 />
     </Layout>
   );
 };
