@@ -6,6 +6,8 @@ import Layout from '../templates/layout';
 import IntroBanner from '../components/indexPage/IntroBanner';
 import Banner1 from '../components/indexPage/Banner1';
 
+// TODO get rid of index.js and generate with template and gatsby-node
+
 const Index = ({ data }) => {
   return (
     // <Layout> includes header banner and navigation
