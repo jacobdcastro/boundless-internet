@@ -76,28 +76,28 @@ const Footer = () => {
 
       <div className="linkSection">
         <div className="socialLinks">
-          <a href="#" className="socialIcon">
+          <a href="https://facebook.com/" className="socialIcon">
             <Img
               fluid={facebook.fluid}
               title={facebook.title}
               alt={facebook.description}
             />
           </a>
-          <a href="#" className="socialIcon">
+          <a href="https://instagram.com/" className="socialIcon">
             <Img
               fluid={instagram.fluid}
               title={instagram.title}
               alt={instagram.description}
             />
           </a>
-          <a href="#" className="socialIcon">
+          <a href="https://twitter.com/" className="socialIcon">
             <Img
               fluid={twitter.fluid}
               title={twitter.title}
               alt={twitter.description}
             />
           </a>
-          <a href="#" className="socialIcon">
+          <a href="https://linkedin.com/" className="socialIcon">
             <Img
               fluid={linkedin.fluid}
               title={linkedin.title}
