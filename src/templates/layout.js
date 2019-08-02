@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/header';
-import Footer from '../components/footer';
 import SiteHead from '../utils/Helmet';
+import IntroBanner from '../components/indexPage/IntroBanner';
+import Banner1 from '../components/indexPage/Banner1';
+import Footer from '../components/footer';
 
 import '../utils/normalize.css';
 

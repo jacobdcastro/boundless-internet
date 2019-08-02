@@ -4,13 +4,16 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return graphql(
     `
-      query webPagesQuery {
+      query WEB_PAGES_QUERY {
         allContentfulWebPage {
           edges {
             node {
               id
               pageTitle
               slug
+              pageHeader {
+                id
+              }
             }
           }
         }
@@ -22,12 +25,12 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors;
     }
     let slug;
-    const webPageTemplate = path.resolve(`src/templates/layout.js`);
+    const webPageTemplate = path.resolve(`src/templates/page.js`);
 
     // Create blog post pages.
     result.data.allContentfulWebPage.edges.forEach(({ node }) => {
       if (node.slug === `index`) {
-        slug = ``;
+        slug = `/`;
       } else {
         slug = node.slug;
       }
@@ -37,6 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
         component: webPageTemplate,
         context: {
           id: node.id,
+          headerId: node.pageHeader.id,
           // Add optional context data to be inserted
           // as props into the page component..
           //
