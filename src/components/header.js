@@ -8,6 +8,7 @@ import '../utils/hamburgers.css';
 
 const Header = ({ headerData }) => {
   let [mobileNavIsOpen, toggleMobileNav] = useState(false);
+
   const data = useStaticQuery(graphql`
     query HeaderLogoQuery {
       contentfulAsset(id: { eq: "c5119d81-21d5-5d89-bf6d-761c701f0e9e" }) {
@@ -77,8 +78,7 @@ const Header = ({ headerData }) => {
           </div>
         ) : (
           <div className="headerContentSection">
-            <h2>asdfjkl;</h2>
-            <a href="#footer">GET STARTED</a>
+            <h2>{headerData.headline}</h2>
           </div>
         )}
       </div>

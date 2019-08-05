@@ -11,9 +11,6 @@ exports.createPages = ({ graphql, actions }) => {
               id
               pageTitle
               slug
-              pageHeader {
-                id
-              }
             }
           }
         }
@@ -27,7 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
     let slug;
     const webPageTemplate = path.resolve(`src/templates/page.js`);
 
-    // Create blog post pages.
+    // Create website pages
     result.data.allContentfulWebPage.edges.forEach(({ node }) => {
       if (node.slug === `index`) {
         slug = `/`;
@@ -35,20 +32,10 @@ exports.createPages = ({ graphql, actions }) => {
         slug = node.slug;
       }
       createPage({
-        // Path for this page — required
         path: `${slug}`,
         component: webPageTemplate,
         context: {
           id: node.id,
-          headerId: node.pageHeader.id,
-          // Add optional context data to be inserted
-          // as props into the page component..
-          //
-          // The context data can also be used as
-          // arguments to the page GraphQL query.
-          //
-          // The page "path" is always available as a GraphQL
-          // argument.
         },
       });
     });

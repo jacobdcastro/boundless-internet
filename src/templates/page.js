@@ -3,16 +3,26 @@ import { graphql } from 'gatsby';
 
 import Layout from '../templates/layout';
 import IntroBanner from '../components/indexPage/IntroBanner';
-import Banner1 from '../components/indexPage/Banner1';
+import TextBanner from '../components/indexPage/TextBanner';
 
-// TODO get rid of index.js and generate with template and gatsby-node
-
-const Page = ({ data }) => {
+const Page = props => {
+  const pageData = props.data.contentfulWebPage;
   return (
     // <Layout> includes header banner and navigation
-    <Layout data={data}>
-      <IntroBanner />
-      <Banner1 />
+    <Layout pageData={pageData}>
+      {pageData.slug === 'index' && <IntroBanner />}
+
+      {pageData.mainContentOrder.map(section => {
+        if (section.__typename === 'ContentfulTextBanner') {
+          return <TextBanner key={section.id} bannerData={section} />;
+        } else if (section.__typename === 'ContentfulLargeParagraph') {
+          return (
+            <div>
+              <h1>This is a large paragraph section!</h1>
+            </div>
+          );
+        }
+      })}
     </Layout>
   );
 };
@@ -20,35 +30,47 @@ const Page = ({ data }) => {
 export default Page;
 
 export const PAGE_QUERY = graphql`
-  query PAGE_QUERY {
-    contentfulWebPage(id: $ID) {
+  query PAGE_QUERY_BY_ID($id: String!) {
+    contentfulWebPage(id: { eq: $id }) {
       id
+      slug
       pageTitle
       pageHeader {
         id
         pageTitle
         isHomePage
+        headline
         backgroundImage {
           id
           title
           description
-          fluid {
+          fluid(quality: 100) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
       }
       mainContentOrder {
-        id
-        title
-        textAlign
-        text {
-          text
-        }
-        backgroundImage {
+        ... on ContentfulLargeParagraph {
           id
-          description
-          fluid {
-            ...GatsbyContentfulFluid_withWebp
+          title
+          childContentfulLargeParagraphContentRichTextNode {
+            content
+          }
+        }
+        ... on ContentfulTextBanner {
+          id
+          title
+          textAlign
+          text {
+            text
+          }
+          backgroundImage {
+            id
+            title
+            description
+            fluid(quality: 100) {
+              ...GatsbyContentfulFluid_withWebp
+            }
           }
         }
       }

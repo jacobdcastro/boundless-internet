@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/header';
+import Header from '../components/Header';
 import SiteHead from '../utils/Helmet';
-import IntroBanner from '../components/indexPage/IntroBanner';
-import Banner1 from '../components/indexPage/Banner1';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 
 import '../utils/normalize.css';
 
-const Layout = ({ data, children }) => {
+const Layout = ({ pageData, children }) => {
   return (
     <div
       style={{
@@ -16,7 +14,7 @@ const Layout = ({ data, children }) => {
       }}
     >
       <SiteHead />
-      <Header headerData={data} />
+      <Header headerData={pageData.pageHeader} />
 
       <main
         style={{
