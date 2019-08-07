@@ -1,23 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import Wrapper from '../styles/mobilenav-styles';
 
-const MobileNav = ({ mobileNavIsRendered, toggleRender, animTime }) => {
-  let [mobileNavIsMoving, toggleIsMoving] = useState(false);
-  let [mobileNavIsOpen, toggleOpen] = useState(false);
-
+const MobileNav = ({
+  mobileNavIsRendered,
+  toggleRender,
+  mobileNavIsOpening,
+  toggleIsOpening,
+  mobileNavIsOpen,
+  toggleOpen,
+  mobileNavIsClosing,
+  toggleIsClosing,
+  toggleInit,
+  initial,
+  animTime,
+}) => {
   useEffect(() => {
     console.log('Rendered!!');
-    toggleIsMoving((mobileNavIsMoving = !mobileNavIsMoving));
+    toggleIsOpening((mobileNavIsOpening = true));
+    console.log('Nav is moving!');
 
-    return () => {
-      console.log('UNrendered!!');
-    };
+    setTimeout(() => {
+      toggleIsOpening((mobileNavIsOpening = false));
+      console.log(`Mobile nav is not moving anymore`);
+      toggleOpen((mobileNavIsOpen = true));
+      console.log(`Mobile nav is officially open!`);
+    }, animTime);
   }, []);
 
   return (
     <Wrapper
       id="mobileNav"
+      initial={initial}
       mobileNavIsOpen={mobileNavIsOpen}
+      mobileNavIsOpening={mobileNavIsOpening}
+      mobileNavIsRendered={mobileNavIsRendered}
+      mobileNavIsClosing={mobileNavIsClosing}
       animTime={animTime}
     >
       <div className="filler" />

@@ -9,8 +9,12 @@ import '../utils/hamburgers.css';
 
 const Header = ({ headerData }) => {
   let [mobileNavIsRendered, toggleRender] = useState(false);
+  let [mobileNavIsOpening, toggleIsOpening] = useState(false);
+  let [mobileNavIsOpen, toggleOpen] = useState(false);
+  let [mobileNavIsClosing, toggleIsClosing] = useState(false);
+  let [initial, toggleInit] = useState(true);
 
-  const animTime = '0.6s';
+  const animTime = 1050;
 
   const data = useStaticQuery(graphql`
     query HeaderLogoQuery {
@@ -25,6 +29,25 @@ const Header = ({ headerData }) => {
     }
   `);
 
+  const openMobileNav = () => {
+    toggleInit((initial = true));
+    toggleRender((mobileNavIsRendered = true));
+    // rest of render function in MobileNav.js in useEffect().
+  };
+
+  const closeMobileNav = () => {
+    toggleInit((initial = false));
+    toggleOpen((mobileNavIsOpen = false));
+    toggleIsClosing((mobileNavIsClosing = true));
+    console.log(`Mobile nav now closing`);
+    setTimeout(() => {
+      toggleIsClosing((mobileNavIsClosing = false));
+      console.log(`Mobile nav is closed!`);
+      toggleRender((mobileNavIsRendered = false));
+      console.log(`Now UNrendered!!!`);
+    }, animTime);
+  };
+
   return (
     <Wrapper>
       <Img
@@ -36,8 +59,13 @@ const Header = ({ headerData }) => {
       {mobileNavIsRendered && (
         <MobileNav
           animTime={animTime}
+          initial={initial}
+          toggleInit={toggleInit}
           mobileNavIsRendered={mobileNavIsRendered}
           toggleRender={toggleRender}
+          toggleIsOpening={toggleIsOpening}
+          mobileNavIsOpen={mobileNavIsOpen}
+          toggleOpen={toggleOpen}
         />
       )}
 
@@ -55,7 +83,27 @@ const Header = ({ headerData }) => {
             />
           </Link>
 
-          {/* <ul id="fullNav">
+          <button
+            id="hamburger"
+            className={`hamburger hamburger--spin-r${(mobileNavIsOpening ||
+              mobileNavIsOpen) &&
+              ` is-active`}`}
+            onClick={() => {
+              if (mobileNavIsOpen) {
+                closeMobileNav();
+              } else {
+                openMobileNav();
+              }
+            }}
+            type="button"
+          >
+            <span className="hamburger-box">
+              <span className="hamburger-inner" />
+            </span>
+          </button>
+        </nav>
+
+        {/* <ul id="fullNav">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -66,21 +114,6 @@ const Header = ({ headerData }) => {
             <Link to="/about">About</Link>
           </li>
         </ul> */}
-
-          <button
-            id="hamburger"
-            className={`hamburger hamburger--spin-r${mobileNavIsRendered &&
-              ` is-active`}`}
-            onClick={() =>
-              toggleRender((mobileNavIsRendered = !mobileNavIsRendered))
-            }
-            type="button"
-          >
-            <span className="hamburger-box">
-              <span className="hamburger-inner" />
-            </span>
-          </button>
-        </nav>
 
         {headerData.isHomePage ? (
           <div className="index__headerContentSection">
