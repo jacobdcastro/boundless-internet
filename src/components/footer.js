@@ -1,7 +1,7 @@
 import React from 'react';
-import Wrapper from '../styles/footer-styles';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Wrapper from '../styles/footer-styles';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
