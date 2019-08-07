@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import MobileNav from './MobileNav';
 
 // CSS-IN-JS styled-components
 import Wrapper from '../styles/header-styles';
 import '../utils/hamburgers.css';
 
 const Header = ({ headerData }) => {
-  let [mobileNavIsOpen, toggleMobileNav] = useState(false);
+  let [mobileNavIsRendered, toggleRender] = useState(false);
+
+  const animTime = '0.6s';
 
   const data = useStaticQuery(graphql`
     query HeaderLogoQuery {
@@ -29,6 +32,14 @@ const Header = ({ headerData }) => {
         fluid={headerData.backgroundImage.fluid}
         alt={headerData.description}
       />
+
+      {mobileNavIsRendered && (
+        <MobileNav
+          animTime={animTime}
+          mobileNavIsRendered={mobileNavIsRendered}
+          toggleRender={toggleRender}
+        />
+      )}
 
       <div className="headerContainer">
         <nav>
@@ -58,10 +69,10 @@ const Header = ({ headerData }) => {
 
           <button
             id="hamburger"
-            className={`hamburger hamburger--spin-r${mobileNavIsOpen &&
+            className={`hamburger hamburger--spin-r${mobileNavIsRendered &&
               ` is-active`}`}
             onClick={() =>
-              toggleMobileNav((mobileNavIsOpen = !mobileNavIsOpen))
+              toggleRender((mobileNavIsRendered = !mobileNavIsRendered))
             }
             type="button"
           >
