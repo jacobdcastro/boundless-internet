@@ -12,7 +12,7 @@ const MobileNav = ({ mobileNavIsRendered, toggleRender, animTime }) => {
     return () => {
       console.log('UNrendered!!');
     };
-  });
+  }, []);
 
   return (
     <Wrapper
