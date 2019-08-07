@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Wrapper from '../styles/mobilenav-styles';
 
-const MobileNav = () => {
+const MobileNav = ({ mobileNavIsRendered, toggleRender, animTime }) => {
+  let [mobileNavIsMoving, toggleIsMoving] = useState(false);
+  let [mobileNavIsOpen, toggleOpen] = useState(false);
+
+  useEffect(() => {
+    console.log('Rendered!!');
+    toggleIsMoving((mobileNavIsMoving = !mobileNavIsMoving));
+
+    return () => {
+      console.log('UNrendered!!');
+    };
+  });
+
   return (
-    <Wrapper>
-      <div>Umm hi</div>
+    <Wrapper
+      id="mobileNav"
+      mobileNavIsOpen={mobileNavIsOpen}
+      animTime={animTime}
+    >
+      <div className="filler" />
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
     </Wrapper>
   );
 };
