@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/header';
 import SiteHead from '../utils/Helmet';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 
 import '../utils/normalize.css';
 
