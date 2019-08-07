@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../templates/layout';
+import Layout from './layout';
 import IntroBanner from '../components/indexPage/IntroBanner';
 import TextBanner from '../components/indexPage/TextBanner';
 
