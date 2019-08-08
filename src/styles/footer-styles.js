@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   font-family: 'Proxima Nova', 'Helvetica', sans-serif;
   background-color: #272838;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 15px 0;
   display: flex;
@@ -57,7 +57,7 @@ const Wrapper = styled.div`
     }
   }
   .linkSection {
-    width: 100vw;
+    width: 100%;
   }
   .socialLinks {
     display: flex;

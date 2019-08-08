@@ -22,6 +22,7 @@ const Page = props => {
             </div>
           );
         }
+        return '';
       })}
     </Layout>
   );

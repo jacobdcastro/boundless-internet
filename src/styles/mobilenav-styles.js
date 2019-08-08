@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
-  width: 100vw;
+  z-index: 3;
+  width: 100%;
   height: 100vh;
   background-color: blue;
   ${props => {

@@ -11,6 +11,7 @@ const Layout = ({ pageData, children }) => {
     <div
       style={{
         backgroundColor: '#dbdbdb',
+        margin: '0',
       }}
     >
       <SiteHead />
@@ -21,6 +22,7 @@ const Layout = ({ pageData, children }) => {
           position: 'relative',
           display: 'inline-block',
           zIndex: '2',
+          width: '100%',
         }}
       >
         {children}

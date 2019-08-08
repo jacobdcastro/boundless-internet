@@ -11,7 +11,6 @@ const Header = ({ headerData }) => {
   let [mobileNavIsRendered, toggleRender] = useState(false);
   let [mobileNavIsOpening, toggleIsOpening] = useState(false);
   let [mobileNavIsOpen, toggleOpen] = useState(false);
-  let [mobileNavIsClosing, toggleIsClosing] = useState(false);
   let [initial, toggleInit] = useState(true);
 
   const animTime = 1050;
@@ -38,10 +37,8 @@ const Header = ({ headerData }) => {
   const closeMobileNav = () => {
     toggleInit((initial = false));
     toggleOpen((mobileNavIsOpen = false));
-    toggleIsClosing((mobileNavIsClosing = true));
     console.log(`Mobile nav now closing`);
     setTimeout(() => {
-      toggleIsClosing((mobileNavIsClosing = false));
       console.log(`Mobile nav is closed!`);
       toggleRender((mobileNavIsRendered = false));
       console.log(`Now UNrendered!!!`);
@@ -74,8 +71,9 @@ const Header = ({ headerData }) => {
           <Link to="/">
             <Img
               style={{
-                width: '35vw',
+                width: '145px',
                 height: 'auto',
+                maxWidth: '145px',
               }}
               className="headerLogo"
               fluid={data.contentfulAsset.fluid}

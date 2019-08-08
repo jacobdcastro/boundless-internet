@@ -47,17 +47,19 @@ const IntroBanner = () => {
 
   return (
     <Wrapper>
-      {images.map((img, index) => (
-        <div key={index} className={`introCard ic-${index}`}>
-          <Img
-            classname={`ic-image`}
-            fluid={img.fluid}
-            title={img.title}
-            alt={img.description}
-          />
-          <h3>{img.title}</h3>
-        </div>
-      ))}
+      <div className="container">
+        {images.map((img, index) => (
+          <div key={index} className={`introCard ic-${index}`}>
+            <Img
+              classname={`ic-image`}
+              fluid={img.fluid}
+              title={img.title}
+              alt={img.description}
+            />
+            <h3>{img.title}</h3>
+          </div>
+        ))}
+      </div>
     </Wrapper>
   );
 };

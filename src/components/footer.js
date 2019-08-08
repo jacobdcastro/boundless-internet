@@ -61,7 +61,7 @@ const Footer = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="footer">
       <div className="contactSection">
         <form id="contact" onSubmit={_handleSubmit}>
           <legend>Contact Us!</legend>
