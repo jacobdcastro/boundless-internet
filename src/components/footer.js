@@ -68,10 +68,19 @@ const Footer = () => {
           <input type="hidden" name="form-name" value="contact" />
 
           <legend>GET STARTED</legend>
-          <input type="text" placeholder="First Name" name="First Name" />
-          <input type="text" placeholder="Last Name" name="Last Name" />
-          <input type="tel" placeholder="Phone Number" name="Phone number" />
-          <input type="email" placeholder="Email" name="Email" />
+          <input
+            type="text"
+            placeholder="Full Name*"
+            name="Full Name"
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number*"
+            name="Phone number"
+            required
+          />
+          <input type="email" placeholder="Email*" name="Email" required />
           <input
             type="text"
             placeholder="Business (optional)"
