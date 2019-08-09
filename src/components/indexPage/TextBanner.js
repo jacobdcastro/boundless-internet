@@ -28,7 +28,9 @@ const TextBanner = ({ bannerData }) => {
   } else {
     return (
       <NoImageWrapper className="textBanner">
-        <h3>{text.text}</h3>
+        <div className="holderDiv">
+          <h3>{text.text}</h3>
+        </div>
       </NoImageWrapper>
     );
   }

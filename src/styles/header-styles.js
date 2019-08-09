@@ -65,6 +65,9 @@ const Wrapper = styled.header`
 
   .headerLogo {
     margin-left: 10px;
+    width: 220px;
+    height: 100px;
+    max-width: 145px;
   }
 
   #hamburger {
@@ -75,6 +78,7 @@ const Wrapper = styled.header`
     display: none;
   }
 
+  /* index header styles */
   .index__headerContentSection {
     margin: 100px;
     position: relative;
@@ -87,6 +91,7 @@ const Wrapper = styled.header`
       font-size: 5vw;
       margin-bottom: 35px;
       letter-spacing: 1px;
+      max-width: 545px;
     }
 
     a {
@@ -99,6 +104,10 @@ const Wrapper = styled.header`
       padding: 15px 25px;
       border-radius: 7px;
     }
+  }
+
+  /* non-index header styles */
+  .headerContentSection {
   }
 
   @media (min-width: 450px) {
@@ -123,8 +132,40 @@ const Wrapper = styled.header`
       border-left: 50px solid transparent;
     }
 
+    nav {
+      max-width: 1166px;
+    }
+
+    #hamburger {
+      display: none;
+    }
+    #fullNav {
+      display: flex;
+      width: 320px;
+      justify-content: space-between;
+      margin-right: 35px;
+    }
+
+    .fullNavItem {
+      list-style-type: none;
+
+      a {
+        padding: 4px 2px;
+        border-bottom: 3px solid transparent;
+        font-size: 1.3rem;
+        letter-spacing: 0.6px;
+        color: white;
+        text-decoration: none;
+        transition: 0.25s;
+      }
+      a:hover {
+        text-shadow: 1px 3px 5px #3c3c3c;
+      }
+    }
+
     .index__headerContentSection {
       width: 65%;
+      max-width: 800px;
       margin-top: 140px;
 
       h2 {
@@ -136,6 +177,35 @@ const Wrapper = styled.header`
         padding: 15px 25px;
         border-radius: 7px;
       }
+    }
+  }
+
+  @media (min-width: 1100px) {
+    height: 575px;
+
+    .index__headerContentSection {
+      margin-top: 180px;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      a {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  @media (min-width: 1400px) {
+    &::before {
+      width: 47vw;
+      border-bottom: 50px solid #dbdbdb;
+      border-right: 50px solid transparent;
+    }
+    &::after {
+      width: 47vw;
+      border-bottom: 50px solid #dbdbdb;
+      border-left: 50px solid transparent;
     }
   }
 `;

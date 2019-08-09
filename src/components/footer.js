@@ -54,17 +54,20 @@ const Footer = () => {
   // deconstruct queries for simpler syntax
   const { facebook, instagram, linkedin, twitter } = data;
 
-  // form submission w/ zapier or excel or other google api?
-  const _handleSubmit = e => {
-    e.preventDefault();
-    console.log('form pretend submitted');
-  };
-
   return (
     <Wrapper id="footer">
       <div className="contactSection">
-        <form id="contact" onSubmit={_handleSubmit}>
-          <legend>Contact Us!</legend>
+        <form
+          id="contact"
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          {/* hidden field for Netlify bots */}
+          <input type="hidden" name="form-name" value="contact" />
+
+          <legend>GET STARTED</legend>
           <input type="text" placeholder="First Name" />
           <input type="text" placeholder="Last Name" />
           <input type="tel" placeholder="Phone Number" />

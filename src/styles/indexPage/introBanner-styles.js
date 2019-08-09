@@ -40,7 +40,7 @@ const Wrapper = styled.div`
     .container {
       flex-direction: row;
       justify-content: space-evenly;
-      max-width: 800px;
+      max-width: 1000px;
       width: 90%;
     }
 

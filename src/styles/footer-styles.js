@@ -13,9 +13,15 @@ const Wrapper = styled.div`
   align-items: center;
   color: white;
 
-  #contact {
-    margin: 15px auto;
+  .contactSection {
+    max-width: 415px;
     width: 75vw;
+    margin: 15px auto;
+  }
+
+  #contact {
+    width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     legend {
@@ -63,7 +69,8 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 15px 0;
+    margin: 15px auto;
+    max-width: 415px;
   }
   .socialIcon {
     /* display: inline; */

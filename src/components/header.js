@@ -70,16 +70,27 @@ const Header = ({ headerData }) => {
         <nav>
           <Link to="/">
             <Img
-              style={{
-                width: '145px',
-                height: 'auto',
-                maxWidth: '145px',
+              imgStyle={{
+                width: '100%',
+                height: '60%',
               }}
               className="headerLogo"
               fluid={data.contentfulAsset.fluid}
               alt={data.contentfulAsset.description}
             />
           </Link>
+
+          <ul id="fullNav">
+            <li className="fullNavItem">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="fullNavItem">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="fullNavItem">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
 
           <button
             id="hamburger"
@@ -100,18 +111,6 @@ const Header = ({ headerData }) => {
             </span>
           </button>
         </nav>
-
-        {/* <ul id="fullNav">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul> */}
 
         {headerData.isHomePage ? (
           <div className="index__headerContentSection">
