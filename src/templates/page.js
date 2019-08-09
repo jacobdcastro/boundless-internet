@@ -18,7 +18,7 @@ const Page = props => {
         } else if (section.__typename === 'ContentfulLargeParagraph') {
           return (
             <div>
-              <h1>This is a large paragraph section!</h1>
+              <h1></h1>
             </div>
           );
         }
