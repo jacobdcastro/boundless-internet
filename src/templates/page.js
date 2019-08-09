@@ -4,9 +4,11 @@ import { graphql } from 'gatsby';
 import Layout from './layout';
 import IntroBanner from '../components/indexPage/IntroBanner';
 import TextBanner from '../components/indexPage/TextBanner';
+import LargePara from '../components/aboutPage/LargePara';
 
 const Page = props => {
   const pageData = props.data.contentfulWebPage;
+
   return (
     // <Layout> includes header banner and navigation
     <Layout pageData={pageData}>
@@ -16,11 +18,7 @@ const Page = props => {
         if (section.__typename === 'ContentfulTextBanner') {
           return <TextBanner key={section.id} bannerData={section} />;
         } else if (section.__typename === 'ContentfulLargeParagraph') {
-          return (
-            <div>
-              <h1>This is a large paragraph section!</h1>
-            </div>
-          );
+          return <LargePara key={section.id} data={section} />;
         }
         return '';
       })}
@@ -54,8 +52,10 @@ export const PAGE_QUERY = graphql`
         ... on ContentfulLargeParagraph {
           id
           title
-          childContentfulLargeParagraphContentRichTextNode {
-            content
+          content {
+            childMarkdownRemark {
+              html
+            }
           }
         }
         ... on ContentfulTextBanner {

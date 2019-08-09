@@ -108,6 +108,19 @@ const Wrapper = styled.header`
 
   /* non-index header styles */
   .headerContentSection {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      position: relative;
+      color: white;
+      letter-spacing: 0.8px;
+      font-size: 9vw;
+      margin: 25px auto 45px;
+    }
   }
 
   @media (min-width: 450px) {
@@ -115,6 +128,12 @@ const Wrapper = styled.header`
     .index__headerContentSection {
       margin: 120px auto 75px;
       width: 75%;
+    }
+
+    .headerContentSection {
+      h2 {
+        font-size: 2.813rem;
+      }
     }
   }
 
@@ -206,6 +225,12 @@ const Wrapper = styled.header`
       width: 47vw;
       border-bottom: 50px solid #dbdbdb;
       border-left: 50px solid transparent;
+    }
+
+    .headerContentSection {
+      h2 {
+        font-size: 3.4rem;
+      }
     }
   }
 `;

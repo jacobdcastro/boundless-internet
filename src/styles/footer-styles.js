@@ -41,9 +41,9 @@ const Wrapper = styled.div`
     input:focus {
       box-shadow: inset 0 0 10px #0678d8;
     }
-    input:invalid {
+    /* input:invalid {
       box-shadow: inset 0 0 10px #ef476f;
-    }
+    } */
     /* input:valid {
       box-shadow: inset 0 0 10px green;
     } */

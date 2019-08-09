@@ -5,6 +5,9 @@
   "version": "0.5.0",
   "author": "Jacob D. Castro <jdcastro.business@gmail.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@contentful/rich-text-html-renderer": "^13.4.0",
+    "contentful": "^7.9.1",
     "gatsby": "^2.12.0",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -19,6 +22,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "smooth-scroll": "^16.1.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

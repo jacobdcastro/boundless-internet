@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/header';
 import SiteHead from '../utils/Helmet';
@@ -7,6 +7,13 @@ import Footer from '../components/footer';
 import '../utils/normalize.css';
 
 const Layout = ({ pageData, children }) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // eslint-disable-next-line global-require
+      require('smooth-scroll')('a[href*="#"]');
+    }
+  });
+
   return (
     <div
       style={{
