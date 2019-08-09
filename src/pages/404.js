@@ -1,10 +1,15 @@
 import React from 'react';
+// import Layout from '../templates/layout';
+// import Header from '../components/header';
+// import Footer from '../components/footer';
 
-const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-);
+// TODO finish the page
 
+const headerData = {
+  title: 'Page not found, so sorry!',
+};
+
+const NotFoundPage = () => {
+  return <div>{headerData.title}</div>;
+};
 export default NotFoundPage;
