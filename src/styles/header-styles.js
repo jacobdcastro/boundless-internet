@@ -66,7 +66,7 @@ const Wrapper = styled.header`
   .headerLogo {
     margin-left: 10px;
     width: 220px;
-    height: 100px;
+    height: 60px;
     max-width: 145px;
   }
 
@@ -160,7 +160,7 @@ const Wrapper = styled.header`
     }
     #fullNav {
       display: flex;
-      width: 320px;
+      width: 220px;
       justify-content: space-between;
       margin-right: 35px;
     }

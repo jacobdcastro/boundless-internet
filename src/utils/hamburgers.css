@@ -10,7 +10,7 @@
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: 0.25s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -21,15 +21,15 @@
   overflow: visible;
 }
 .hamburger:hover {
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 .hamburger.is-active:hover {
-  opacity: 0.7;
+  /* opacity: 0.7; */
 }
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #fff;
+  background-color: #272838;
 }
 
 .hamburger-box {

@@ -72,7 +72,7 @@ const Header = ({ headerData }) => {
             <Img
               imgStyle={{
                 width: '100%',
-                height: '60%',
+                height: '100%',
               }}
               className="headerLogo"
               fluid={data.contentfulAsset.fluid}
@@ -84,9 +84,9 @@ const Header = ({ headerData }) => {
             <li className="fullNavItem">
               <Link to="/">Home</Link>
             </li>
-            <li className="fullNavItem">
+            {/* <li className="fullNavItem">
               <Link to="/about">About</Link>
-            </li>
+            </li> */}
             <li className="fullNavItem">
               <a href="#contact">Contact</a>
             </li>

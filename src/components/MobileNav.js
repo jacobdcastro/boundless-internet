@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'gatsby';
 import Wrapper from '../styles/mobilenav-styles';
 
 const MobileNav = ({
@@ -40,9 +41,15 @@ const MobileNav = ({
       <div className="filler" />
       <nav>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          {/* <li>
+            ><Link to="/about">About</Link>
+          </li> */}
+          <li>
+            <Link to="footer">Contact</Link>
+          </li>
         </ul>
       </nav>
     </Wrapper>
