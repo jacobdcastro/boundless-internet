@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   z-index: 3;
   width: 100%;
   height: 100vh;
-  background-color: blue;
+  background-color: #272838;
   ${props => {
     if (!props.mobileNavIsOpen && !props.initial) {
       return `animation: slideOut ${props.animTime}ms`;
@@ -22,6 +22,44 @@ const Wrapper = styled.div`
       return `slideIn ${props.animTime}ms`;
     }
   }}; */
+
+  .filler {
+    height: 80px;
+    width: 100%;
+    position: relative;
+    background: white;
+  }
+
+  nav {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+
+      li {
+        list-style-type: none;
+        padding: 0;
+        margin: 15px;
+      
+        a {
+          font-size: 2rem;
+          font-weight: 600;
+          color: white;
+          text-decoration: none;
+          letter-spacing: .8px;
+          text-align: center;
+        }
+      }
+    }
+  }
 
   @keyframes slideIn {
     from {
