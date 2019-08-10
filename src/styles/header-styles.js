@@ -72,10 +72,31 @@ const Wrapper = styled.header`
 
   #hamburger {
     margin-right: 20px;
+    display: none;
   }
 
   #fullNav {
-    display: none;
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  .fullNavItem {
+    list-style-type: none;
+
+    a {
+      padding: 4px 2px;
+      border-bottom: 3px solid transparent;
+      font-size: 1.3rem;
+      letter-spacing: 0.6px;
+      color: white;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+    a:hover {
+      text-shadow: 1px 3px 5px #3c3c3c;
+    }
   }
 
   /* index header styles */

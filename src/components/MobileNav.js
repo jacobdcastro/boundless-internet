@@ -48,7 +48,7 @@ const MobileNav = ({
             ><Link to="/about">About</Link>
           </li> */}
           <li>
-            <Link to="footer">Contact</Link>
+            <Link to="#footer">Contact</Link>
           </li>
         </ul>
       </nav>
