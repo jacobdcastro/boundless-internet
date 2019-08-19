@@ -1,3 +1,10 @@
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+console.log(`Current environment: '${activeEnv}'`);
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Boundless Internet`,
@@ -11,8 +18,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#DBDBDB`,
+        theme_color: `#0678D8`,
         display: `minimal-ui`,
         icon: `src/images/boundlesslogo.jpg`, // This path is relative to the root of the site.
       },
@@ -27,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `fg810vtwsjvw`,
-        accessToken: `f3-uLUeBM_M_St8ZUiJHeO0AI5xcsmzf1rIwsB7kXnk`,
+        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
     },
     `gatsby-plugin-react-helmet`,
