@@ -89,7 +89,7 @@ const Footer = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
-
+      {/* 
       <div className="linkSection">
         <div className="socialLinks">
           <a href="https://facebook.com/" className="socialIcon">
@@ -122,7 +122,7 @@ const Footer = () => {
           </a>
         </div>
         <ul className="footerNav"></ul>
-      </div>
+      </div> */}
 
       <p>&copy;2019 - Boundless Communications</p>
     </Wrapper>
