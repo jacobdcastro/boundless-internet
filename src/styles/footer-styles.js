@@ -31,6 +31,10 @@ const Wrapper = styled.div`
       margin: 10px auto;
       text-align: center;
     }
+    label {
+      position: absolute;
+      z-index: -5;
+    }
     input {
       padding: 8px;
       margin-bottom: 13px;
