@@ -18,7 +18,7 @@ const Wrapper = styled.header`
     width: 43vw;
     position: absolute;
     z-index: 1;
-    border-bottom: 40px solid #dbdbdb;
+    border-bottom: 40px solid #e5e5e5;
     border-right: 50px solid transparent;
   }
   &::after {
@@ -28,7 +28,7 @@ const Wrapper = styled.header`
     width: 43vw;
     z-index: 1;
     position: absolute;
-    border-bottom: 40px solid #dbdbdb;
+    border-bottom: 40px solid #e5e5e5;
     border-left: 50px solid transparent;
   }
 
@@ -132,6 +132,7 @@ const Wrapper = styled.header`
     width: 75%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -139,8 +140,15 @@ const Wrapper = styled.header`
       position: relative;
       color: white;
       letter-spacing: 0.8px;
-      font-size: 9vw;
-      margin: 25px auto 45px;
+      font-size: 10vw;
+      margin: 25px auto 5px;
+      text-shadow: 0 0 15px #222;
+    }
+    h3 {
+      text-shadow: 0 0 15px #222;
+      text-align: center;
+      margin: 0;
+      color: white;
     }
   }
 
@@ -163,12 +171,12 @@ const Wrapper = styled.header`
 
     &::before {
       width: 46vw;
-      border-bottom: 40px solid #dbdbdb;
+      border-bottom: 40px solid #e5e5e5;
       border-right: 50px solid transparent;
     }
     &::after {
       width: 46vw;
-      border-bottom: 40px solid #dbdbdb;
+      border-bottom: 40px solid #e5e5e5;
       border-left: 50px solid transparent;
     }
 
@@ -209,7 +217,26 @@ const Wrapper = styled.header`
       margin-top: 140px;
 
       h2 {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
+      }
+
+      a {
+        letter-spacing: 1.5px;
+        padding: 15px 25px;
+        border-radius: 7px;
+      }
+    }
+
+    .headerContentSection {
+      width: 65%;
+      max-width: 800px;
+
+      h2 {
+        font-size: 4.9rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
       }
 
       a {
@@ -239,18 +266,18 @@ const Wrapper = styled.header`
   @media (min-width: 1400px) {
     &::before {
       width: 47vw;
-      border-bottom: 50px solid #dbdbdb;
+      border-bottom: 50px solid #e5e5e5;
       border-right: 50px solid transparent;
     }
     &::after {
       width: 47vw;
-      border-bottom: 50px solid #dbdbdb;
+      border-bottom: 50px solid #e5e5e5;
       border-left: 50px solid transparent;
     }
 
     .headerContentSection {
       h2 {
-        font-size: 3.4rem;
+        font-size: 6.4rem;
       }
     }
   }

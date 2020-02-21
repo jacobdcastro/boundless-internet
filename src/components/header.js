@@ -17,7 +17,7 @@ const Header = ({ headerData }) => {
 
   const data = useStaticQuery(graphql`
     query HeaderLogoQuery {
-      contentfulAsset(id: { eq: "c5119d81-21d5-5d89-bf6d-761c701f0e9e" }) {
+      contentfulAsset(id: { eq: "b074e439-71f7-5609-9815-6098f557cdc2" }) {
         id
         title
         description
@@ -82,11 +82,8 @@ const Header = ({ headerData }) => {
 
           <ul id="fullNav">
             <li className="fullNavItem">
-              <Link to="/">Home</Link>
+              <Link to="/services">Services</Link>
             </li>
-            {/* <li className="fullNavItem">
-              <Link to="/about">About</Link>
-            </li> */}
             <li className="fullNavItem">
               <a href="#contact">Contact</a>
             </li>
@@ -120,6 +117,7 @@ const Header = ({ headerData }) => {
         ) : (
           <div className="headerContentSection">
             <h2>{headerData.headline}</h2>
+            {headerData.subheadline && <h3>{headerData.subheadline}</h3>}
           </div>
         )}
       </div>
