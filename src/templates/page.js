@@ -5,12 +5,12 @@ import Layout from './layout';
 import IntroBanner from '../components/indexPage/IntroBanner';
 import TextBanner from '../components/indexPage/TextBanner';
 import LargePara from '../components/aboutPage/LargePara';
+import ImageWithParagraph from '../components/servicesPage/imageWithParagraph';
 
 const Page = props => {
   const pageData = props.data.contentfulWebPage;
 
   return (
-    // <Layout> includes header banner and navigation
     <Layout pageData={pageData}>
       {pageData.slug === 'index' && <IntroBanner />}
 
@@ -19,8 +19,11 @@ const Page = props => {
           return <TextBanner key={section.id} bannerData={section} />;
         } else if (section.__typename === 'ContentfulLargeParagraph') {
           return <LargePara key={section.id} data={section} />;
+        } else if (section.__typename === 'ContentfulImageWParagraphSection') {
+          return <ImageWithParagraph key={section.id} data={section} />;
+        } else {
+          return null;
         }
-        return '';
       })}
     </Layout>
   );
@@ -39,6 +42,7 @@ export const PAGE_QUERY = graphql`
         pageTitle
         isHomePage
         headline
+        subheadline
         backgroundImage {
           id
           title
@@ -67,6 +71,22 @@ export const PAGE_QUERY = graphql`
           }
           backgroundImage {
             id
+            title
+            description
+            fluid(quality: 100) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+        ... on ContentfulImageWParagraphSection {
+          id
+          title
+          imgOnLeft
+          shortID
+          description {
+            description
+          }
+          image {
             title
             description
             fluid(quality: 100) {

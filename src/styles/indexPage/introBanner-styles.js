@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 // ? INTRO BANNER wrapper for INDEX
 const Wrapper = styled.div`
-  background-color: #dbdbdb;
+  text-decoration: none;
+  background-color: #e5e5e5;
   width: 100%;
   margin: 0;
   padding: 15px 0;
@@ -26,6 +27,7 @@ const Wrapper = styled.div`
   }
 
   h3 {
+    text-decoration: none;
     color: #5b5b5b;
     margin: 30px 0 0;
     font-family: 'Proxima Nova', 'Helvetica', sans-serif;

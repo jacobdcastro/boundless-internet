@@ -17,7 +17,7 @@ const Layout = ({ pageData, children }) => {
   return (
     <div
       style={{
-        backgroundColor: '#dbdbdb',
+        backgroundColor: '#e5e5e5',
         margin: '0',
       }}
     >
